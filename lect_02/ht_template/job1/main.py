@@ -10,10 +10,10 @@ import api
 import storage
 
 
-API_AUTH_TOKEN = os.environ.get("API_AUTH_TOKEN")
+AUTH_TOKEN = os.environ.get("API_AUTH_TOKEN")
 
-if not API_AUTH_TOKEN:
-    print("API_AUTH_TOKEN environment variable must be set")
+if not AUTH_TOKEN:
+    print("AUTH_TOKEN environment variable must be set")
 
 
 app = Flask(__name__)

@@ -17,7 +17,7 @@ class MainFunctionTestCase(TestCase):
 
     def test_return_400_date_param_missed_path_param_missed(self):
         """
-        When src_parquet_path param missed, 400 error return
+        Raise 400 HTTP code when no 'date' param
         """
         resp = self.client.post(
             '/',

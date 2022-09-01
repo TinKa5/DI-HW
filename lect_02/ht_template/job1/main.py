@@ -17,6 +17,12 @@ def main() -> flask_typing.ResponseReturnValue:
     """
     Controller that accepts command via HTTP and
     trigger business logic layer
+
+    Proposed POST body in JSON:
+    {
+      "data: "2022-08-09",
+      "pase": "path/to/target/
+    }
     """
     input_data: dict = request.json
     # TODO: implement me

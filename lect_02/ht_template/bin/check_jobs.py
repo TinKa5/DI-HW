@@ -34,7 +34,6 @@ def run_job2():
     resp = requests.post(
         url=f'http://localhost:{JOB2_PORT}/',
         json={
-            "date": "2022-08-09",
             "raw_dir": RAW_DIR,
             "stg_dir": STG_DIR
         }

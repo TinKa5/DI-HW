@@ -28,7 +28,7 @@ def main() -> flask_typing.ResponseReturnValue:
     Proposed POST body in JSON:
     {
       "data: "2022-08-09",
-      "raw_dir": "path/to/target/"
+      "raw_dir": "/path/to/my_dir/raw/sales/2022-08-09"
     }
     """
     input_data: dict = request.json

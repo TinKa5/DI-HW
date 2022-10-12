@@ -3,8 +3,8 @@ import time
 import requests
 
 
-BASE_DIR = os.environ.get("BASE_DIR")
-
+#BASE_DIR = os.environ.get("BASE_DIR")
+BASE_DIR = 'C:/Users/Tetiana_Brusnik/PycharmProjects/2/storage'
 if not BASE_DIR:
     print("BASE_DIR environment variable must be set")
     exit(1)
@@ -43,6 +43,6 @@ def run_job2():
 
 
 if __name__ == '__main__':
-    run_job1()
+    #run_job1()
     time.sleep(3)
     run_job2()

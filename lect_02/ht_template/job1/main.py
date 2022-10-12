@@ -2,19 +2,11 @@
 This file contains the controller that accepts command via HTTP
 and trigger business logic layer
 """
-import os
+
 from flask import Flask, request
 from flask import typing as flask_typing
 
-import api
-import storage
-
-
-AUTH_TOKEN = os.environ.get("API_AUTH_TOKEN")
-
-if not AUTH_TOKEN:
-    print("AUTH_TOKEN environment variable must be set")
-
+from lect_02.ht_template.job1 import api
 
 app = Flask(__name__)
 
@@ -32,10 +24,18 @@ def main() -> flask_typing.ResponseReturnValue:
     }
     """
     input_data: dict = request.json
-    # TODO: implement me
-    # NB: you should handle the request and call these functions:
-    # api.get_sales()
-    # storage.save_to_disk()
+
+    if not input_data.get('date'):
+        return {
+           "message": "Date is missed",
+               }, 400
+
+    if not input_data.get('raw_dir'):
+        return {
+           "message": "raw_dir is missed",
+               }, 400
+
+    api.get_sales(input_data)
 
     return {
                "message": "Data retrieved successfully from API",
